@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CegahCovid</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/corona.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a
+          href="mailto:zahrina.nurpuriani.si.21@cic.ac.id">zahrina.nurpuriani.si.21@cic.ac.id</a>
+        <i class="bi bi-phone"></i> +62 881 8212 718
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="https://www.pedulilindungi.id/" class="twitter"><i class="bi bi-globe"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <img src="assets/img/corona.png" width="65" height="50">
+      <h1 class="logo me-auto"><a href="index.html">CegahCovid</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Q&A</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="https://www.pedulilindungi.id/pendaftaran-vaksin" class="appointment-btn scrollto"><span
+          class="d-none d-md-inline">Daftar</span>
+        Vaksinasi</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to CegahCovid</h1>
+      <h2>Cek Kesehatanmu Sekarang !</h2>
+      <a href="https://www.pedulilindungi.id/login?redirect=periksa-sertifikat" class="btn-get-started scrollto">Periksa
+        Sertifikat Vaksin &#8594</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Cek status Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+        <div class="card card-center">
+          <div class="card-body">
+            <h4 class="card-title"><b>Cek Status Kesehatan</b></h4>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <hr>
+            </h6>
+            <form method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <label>Nama Lengkap</label>
+                  <input type="text" name="nama_sts" class="form-control" id="nama_sts"
+                    placeholder="Tulis nama lengkap Anda disini" onchange="cetakNama()">
+                </div>
+                <div class="col-md-3 form-group">
+                  <label>NIK</label>
+                  <input type="number" name="nik" class="form-control" id="nik" placeholder="Masukkan NIK"
+                    onchange="cetakNik()">
+                </div>
+                <div class="col-md-3 form-group">
+                  <label>Status Vaksin</label>
+                  <select name="statusVaksin" id="statusVaksin" class="form-select" onchange="cetakStatus()">
+                    <option selected>--Pilih status vaksin--</option>
+                    <option value="sudah vaksin">Sudah Vaksin</option>
+                    <option value="belum vaksin">Belum Vaksin</option>
+                  </select>
+                </div>
+                <div class="col-md-2 form-group">
+                  <label></label>
+                  <div class="text-center"><button type="button" class="btn btn-success" data-toggle="modal"
+                      data-target="#statusModal"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .99rem;">Periksa</button>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Modal status kesehatan -->
+        <div class="modal" id="statusModal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Status Kesehatan</h4>
+                <button type="button" class="btn-close" data-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <script>
+                  function cetakNama() {
+                    var nama = document.getElementById("nama_sts").value;
+                    document.getElementById("cetakNama").innerHTML = "Nama: <b>" + nama + "</b>";
+                  }
+
+                  function cetakNik() {
+                    var nik = document.getElementById("nik").value;
+                    document.getElementById("cetakNik").innerHTML = "NIK: <b>" + nik + "</b>";
+                  }
+
+                  function cetakStatus() {
+                    var status_vaksin = document.getElementById("statusVaksin").value;
+                    if (status_vaksin == "sudah vaksin") {
+                      document.getElementById("cetakStatus").innerHTML =
+                        "Status: <b>sudah vaksin</b> <br><br>Status Anda Aman!";
+                    } else if (status_vaksin == "belum vaksin") {
+                      document.getElementById("cetakStatus").innerHTML =
+                        "Status: <b>belum vaksin</b> <br><br>Status Anda belum aman. Silahkan segera melakukan vaksinasi!";
+                    }
+                  }
+                </script>
+                <div id="cetakNama"></div>
+                <div id="cetakNik"></div>
+                <div id="cetakStatus"></div>
+
+                <a href="https://www.pedulilindungi.id/pendaftaran-vaksin">Klik disini untuk daftar vaksinasi</a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End modal status kesehatan -->
+      </div>
+    </section><!-- End Cek status Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="https://youtu.be/OPeuzQYRzAM" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div
+            class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-7 px-lg-5">
+            <h3><b>COVID-19</b></h3>
+            <p>Penyakit virus corona (COVID-19) adalah penyakit menular yang disebabkan oleh virus SARS-CoV-2.
+              Sebagian besar orang yang tertular COVID-19 akan mengalami gejala ringan hingga sedang, dan akan pulih
+              tanpa penanganan khusus. Namun, sebagian orang akan mengalami sakit parah dan memerlukan bantuan medis.
+            </p>
+            <hr>
+            <p style="color: grey;"><b>Cara Penyebaran Virus Ini</b></p>
+            <p>Virus dapat menyebar dari mulut atau hidung orang yang terinfeksi melalui partikel cairan kecil ketika
+              orang tersebut batuk, bersin, berbicara, bernyanyi, atau bernapas. Partikel ini dapat berupa droplet yang
+              lebih besar dari saluran pernapasan hingga aerosol yang lebih kecil.
+              Anda dapat tertular saat menghirup udara yang mengandung virus jika berada di dekat orang yang sudah
+              terinfeksi COVID-19. Anda juga dapat tertular jika menyentuh mata, hidung, atau mulut setelah menyentuh
+              permukaan benda yang terkontaminasi. Virus lebih mudah menyebar di dalam ruangan dan di tempat ramai.</p>
+            <hr>
+            <p>Masing-masing orang memiliki respons yang berbeda terhadap COVID-19. Sebagian besar orang yang terpapar
+              virus ini
+              akan mengalami gejala ringan hingga sedang, dan akan pulih tanpa perlu dirawat di rumah sakit.</p>
+            <p>Gejala yang paling umum</p>
+            <ul style="color: #5D5C5A;">
+              <li>demam</li>
+              <li>batuk</li>
+              <li>kelelahan</li>
+              <li>kehilangan rasa atau bau</li>
+            </ul>
+            <p>Gejala yang sedikit tidak umum</p>
+            <ul style="color: #5D5C5A;">
+              <li>sakit tenggorokan</li>
+              <li>sakit kepala</li>
+              <li>sakit dan nyeri</li>
+              <li>diare</li>
+              <li>ruam pada kulit, atau perubahan warna pada jari tangan atau jari kaki</li>
+              <li>mata merah atau iritasi</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="fas fa-dna"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <a href="#services">
+                <p style="color: black;">Gejala</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="fas fa-heartbeat"></i>
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <a href="#services">
+                <p style="color: black;">Pencegahan</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="fas fa-hospital-user"></i>
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <a href="#services">
+                <p style="color: black;">Perawatan</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="fas fa-pills"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <a href="#services">
+                <p style="color: black;">Vaksin</p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Coronavirus adalah suatu kelompok virus yang dapat menyebabkan penyakit pada hewan atau manusia. Beberapa
+            jenis coronavirus diketahui menyebabkan infeksi saluran nafas pada manusia mulai dari batuk pilek hingga
+            yang lebih serius seperti Middle East Respiratory Syndrome (MERS) dan Severe Acute Respiratory Syndrome
+            (SARS). Coronavirus jenis baru yang ditemukan menyebabkan penyakit COVID-19. Virus ini harus segera
+            ditangani dengan baik agar tidak semakin parah dan menyebar.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Gejala</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Pencegahan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Perawatan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Vaksin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="" href="#"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Gejala</h3>
+                    <p style="font-size: 14px; color: black;">Gejala yang paling umum</p>
+                    <ul style="font-size: 14px;">
+                      <li>demam</li>
+                      <li>batuk</li>
+                      <li>kelelahan</li>
+                      <li>kehilangan rasa atau bau</li>
+                    </ul>
+                    <p style="font-size: 14px; color: black;">Gejala yang sedikit tidak umum</p>
+                    <ul style="font-size: 14px;">
+                      <li>sakit tenggorokan</li>
+                      <li>sakit kepala</li>
+                      <li>sakit dan nyeri</li>
+                      <li>diare</li>
+                      <li>ruam pada kulit, atau perubahan warna pada jari tangan atau jari kaki</li>
+                      <li>mata merah atau iritasi</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/gallery/gejala1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Pencegahan</h3>
+                    <p style="font-size: 13px; color:black;">Untuk mencegah penyebaran COVID-19:</p>
+                    <ul style="font-size: 13px;">
+                      <li>Selalu jaga jarak aman dari orang lain (min 1 meter), meskipun mereka tidak tampak sakit.</li>
+                      <li>Kenakan masker di ruang publik, terutama di dalam ruangan atau jika pembatasan fisik tidak
+                        memungkinkan.</li>
+                      <li>Sebaiknya pilih ruangan terbuka dan berventilasi baik. Buka jendela jika berada dalam ruangan.
+                      </li>
+                      <li>Cuci tangan secara rutin. Gunakan sabun dan air, atau cairan pembersih tangan berbahan
+                        alkohol.</li>
+                      <li>Ikuti vaksinasi ketika giliran Anda. Ikuti panduan setempat terkait vaksinasi.</li>
+                      <li>Saat batuk atau bersin, tutup mulut dan hidung Anda dengan lengan atau tisu.</li>
+                      <li>Jangan keluar rumah jika merasa tidak enak badan.</li>
+                    </ul>
+                    <p style="font-size: 13px; color: black;">Jika demam, batuk, dan kesulitan bernapas, segera cari
+                      bantuan medis.
+                      Telepon terlebih dahulu agar penyedia layanan kesehatan dapat mengarahkan Anda ke fasilitas
+                      kesehatan yang tepat. Tindakan ini akan melindungi Anda dan mencegah penyebaran virus serta
+                      infeksi lainnya.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/gallery/pencegahan1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Perawatan</h3>
+                    <p style="font-size: 12px; color: black;">Setelah terpapar ke orang yang terinfeksi COVID-19,
+                      lakukan tindakan
+                      berikut:</p>
+                    <ul style="font-size: 12px;">
+                      <li>Hubungi penyedia layanan kesehatan atau hotline COVID-19 untuk mendapatkan informasi terkait
+                        tempat dan waktu untuk menjalani tes.</li>
+                      <li>Jika tes tidak tersedia, tetaplah di rumah dan jangan lakukan kontak dengan orang lain
+                        selama 14 hari.</li>
+                      <li>Selama masa karantina, jangan pergi ke kantor, sekolah, atau tempat-tempat umum. Mintalah
+                        seseorang mencukupi kebutuhan Anda.</li>
+                      <li>Jaga jarak minimal 1 meter dari orang lain, termasuk anggota keluarga Anda.</li>
+                      <li>Gunakan ruangan yang terpisah dari anggota keluarga lain, dan jika tidak memungkinkan, selalu
+                        kenakan masker medis.</li>
+                      <li>Pastikan ventilasi ruangan selalu baik.</li>
+                      <li>Jika menggunakan kamar bersama orang lain, beri jarak antar-tempat tidur minimal 1 meter.</li>
+                      <li>Amati diri Anda sendiri apakah ada gejala apa pun selama 14 hari.</li>
+                      <li>Segera hubungi penyedia layanan kesehatan jika Anda mengalami salah satu tanda bahaya berikut:
+                        sulit bernapas, sulit berbicara atau bergerak, bingung, atau merasakan nyeri di dada.</li>
+                      <li>Tetaplah positif dengan terus berinteraksi dengan orang-orang terdekat melalui telepon atau
+                        internet, dan dengan berolahraga di rumah.</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/gallery/perawatan1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Vaksin COVID-19</h3>
+                    <p style="font-size: 14px; color:black;">Batas usia vaksinasi COVID-19 kini telah diperluas dimulai
+                      dari 6 tahun ke
+                      atas.</p>
+                    <ul>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+Pfizer&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHtn6CmS-R8ptyh1Uw52eqi5koXSvQGKIZ4BseN2BQrE_sFYzA7nVTdM6TagJBRB3ChYwhwo%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAB&biw=1280&bih=569&dpr=1.5">Vaksin
+                          BioNTech, Pfizer
+                        </a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+CanSino&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHo5uRQUsuW-XkBZWdI2uXe1lIdBAHtbhFSVkii_gJ1lp8QXqIiw0IKqvcC4T9N8PYjQ4VlU%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAC&biw=1280&bih=569&dpr=1.5">Vaksin
+                          CanSino
+                        </a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+Sinovac&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHvXANAWGXk-hvSNiplvKvORTwhywnPGWtRz8RpZW-E0ofkU3Hkf8zr-RvGMGmFvrJFPggzU%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAD&biw=1280&bih=569&dpr=1.5">Vaksin
+                          CoronaVac</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+Johnson+%26+Johnson&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHq7ARXdOcNUNFaPG5ElWcsW3e1gIgRMDu9h5U_C1m8jr7qlP6l4tvxBkILZgFqr1QAYWnGEtcsW-F7UCIOfA_LT0UiGz&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAE&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Jannsen</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+moderna&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHh1JEmsAp0YwYJvrkKTgx1jzd6nv3W6lRMoPBTakzvuw5qGCob-ezlZ90IFQy6arZvytpds%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAF&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Moderna</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+novavax&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHvPJE7Adxnq9-hulPTxLGtqdOFfrsscS3RhKkxB6KCvMO0USi7RQQgql0Nq9Q169jhGxDlU%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAG&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Novavax</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+astrazeneca+oxford&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHpBNv7OqcP0Iv3MLDenh-5H89vYWonioikTZ6Eetkc0Yc1w3NR2DF41-S1Mmq3KKRaSAjcTVxFqUpfXoq7PsXCVygQw0&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAH&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Oxford, AstraZeneca</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+RBD-Dimer&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHpv7n0ys826HJ2HjNQZCqSLCSxxTmsRiPlQN7leFjiSMdT86LO_bt2BMCL2So3womjn9vps%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAI&biw=1280&bih=569&dpr=1.5">Vaksin
+                          RBD-Dimer</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+Sinopharm&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHrxaTasgN5g2EHeX47HFjfklI1iRN9tKkHEW8LFMn7aXofeDVUN7LbycwKAIYbx2qT9TOik%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAJ&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Sinopharm BBIBP</a></li>
+                      <li><a style="font-size: 14px;"
+                          href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=vaksin+sputnik+V&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHgcFSmjkqPbdp8A-1Rze3oZ-Y5uJEM3lyFkyzEnb-gE-t3JWDrxBOjHaUWZgj69PJC9LS08%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQg4AHegQIJBAK&biw=1280&bih=569&dpr=1.5">Vaksin
+                          Sputnik V</a></li>
+                    </ul>
+                    <a
+                      href="https://www.google.com/search?rlz=1C1GCEB_enID986ID986&sxsrf=ALiCzsaI78zMoOrQu-f8UIOJyev6odOd1A:1658453622199&q=COVID-19+vaccine&si=AC1wQDAXKblb4YtxZaDquKpQ5Js55CVph8NS1FIwBhgs6qyyHip-GBH300Ib2k-ACLQxq1vR08ZgSxywuAnhP1p13pQn8IYyD0ca_40Xl2psXU55kl6OtDw%3D&sa=X&ved=2ahUKEwi6hpyYrYv5AhWLTmwGHbFfBMgQsIwHegQIJBAL&biw=1280&bih=569&dpr=1.5">&#8594
+                      Selengkapnya tentang vaksin</a>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/gallery/vaksin1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Q & A</h2>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed"
+                data-bs-target="#faq-list-1">Apa yang harus saya lakukan jika saya memiliki gejala COVID-19 dan kapan
+                saya harus mencari pertolongan medis? <i class="bx bx-chevron-down icon-show"></i><i
+                  class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Jika Anda mengalami gejala ringan, seperti batuk ringan atau demam ringan, secara umum tidak perlu
+                  mencari pertolongan medis. Tetap di rumah, isolasi diri, dan pantau gejala Anda. Ikuti panduan
+                  nasional tentang isolasi mandiri.
+                </p>
+                <p>Namun, jika Anda tinggal di daerah dengan malaria atau demam berdarah, Anda tidak boleh mengabaikan
+                  gejala demam. Segera cari pertolongan medis. Saat Anda pergi ke fasilitas kesehatan, kenakan masker
+                  jika memungkinkan, jaga jarak setidaknya 1 meter dari orang lain, dan jangan menyentuh permukaan benda
+                  dengan tangan Anda. Jika yang sakit adalah anak, bantu anak untuk mematuhi nasihat ini.</p>
+                <p>Segera cari perawatan medis jika Anda mengalami kesulitan bernapas atau nyeri/tekanan di dada. Jika
+                  memungkinkan, hubungi penyedia layanan kesehatan Anda terlebih dahulu, sehingga Anda dapat diarahkan
+                  ke fasilitas kesehatan yang tepat.</p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
+                class="collapsed">Bagaimana cara COVID-19 menyebar? <i class="bx bx-chevron-down icon-show"></i><i
+                  class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Orang dapat tertular COVID-19 dari orang lain yang terinfeksi virus ini. COVID-19 dapat menyebar
+                  terutama dari orang ke orang melalui percikan-percikan dari hidung atau mulut yang keluar saat orang
+                  yang terinfeksi COVID-19 batuk, bersin atau berbicara. Percikan-percikan ini relatif berat,
+                  perjalanannya tidak jauh dan jatuh ke tanah dengan cepat. Orang dapat terinfeksi COVID-19 jika
+                  menghirup percikan orang yang terinfeksi virus ini. Oleh karena itu, penting bagi kita untuk menjaga
+                  jarak minimal 1 meter dari orang lain. Percikan-percikan ini dapat menempel di benda dan permukaan
+                  lainnya di sekitar orang seperti meja, gagang pintu, dan pegangan tangan. Orang dapat terinfeksi
+                  dengan menyentuh benda atau permukaan tersebut, kemudian menyentuh mata, hidung, atau mulut mereka.
+                  Inilah sebabnya penting untuk mencuci tangan secara teratur dengan sabun dan air bersih mengalir, atau
+                  membersihkannya dengan cairan antiseptik berbahan dasar alkohol. WHO terus mengkaji perkembangan
+                  penelitian tentang cara penyebaran COVID-19 dan akan menyampaikan temuan-temuan terbaru.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
+                class="collapsed">Apakah COVID-19 dapat menular dari orang yang tidak menunjukkan gejala? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  COVID-19 terutama menyebar melalui percikan saluran pernapasan yang dikeluarkan oleh seseorang yang
+                  batuk atau memiliki gejala lain seperti demam atau rasa lelah. Banyak orang yang terinfeksi COVID-19
+                  hanya mengalami gejala ringan terutama pada tahap-tahap awal. Karena itu, COVID-19 dapat menular dari
+                  orang yang hanya bergejala ringan, seperti batuk ringan, tetapi merasa sehat.
+                </p>
+                <p>Beberapa laporan menunjukkan bahwa orang tanpa gejala dapat menularkan virus ini namun belum
+                  diketahui seberapa sering penularan dengan cara tersebut terjadi. WHO terus mengkaji perkembangan
+                  penelitian tentang cara penyebaran COVID-19 dan akan menyampaikan temuan-temuan terbaru.</p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
+                class="collapsed">Apa yang dapat saya lakukan untuk melindungi diri saya dan orang lain jika tidak
+                mengetahui siapa yang terinfeksi COVID-19? <i class="bx bx-chevron-down icon-show"></i><i
+                  class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Mempraktikkan kebersihan tangan dan pernapasan setiap saat sangatlah penting, dan merupakan cara
+                  terbaik untuk melindungi orang lain dan diri Anda sendiri.
+                </p>
+                <p>Apabila memungkinkan, jaga jarak Anda dengan orang lain minimal 1 meter terutama jika berada di dekat
+                  orang yang batuk atau bersin. Karena beberapa orang yang terinfeksi mungkin belum menunjukkan gejala
+                  atau gejalanya masih ringan, menjaga jarak fisik dengan semua orang adalah upaya terbaik jika Anda
+                  berada di daerah di mana COVID-19 menyebar.</p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                class="collapsed">Apa perbedaan antara isolasi mandiri, karantina mandiri, dan menjaga jarak fisik? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Isolasi berarti memisahkan orang yang sakit dengan gejala COVID-19 dan mungkin menular guna mencegah
+                  penularan.
+                </p>
+                <p>Karantina berarti membatasi kegiatan atau memisahkan orang yang tidak sakit tetapi mungkin terpajan
+                  COVID-19. Tujuannya adalah untuk mencegah penyebaran penyakit pada saat orang tersebut baru mulai
+                  mengalami gejala.</p>
+                <p>Menjaga jarak fisik berarti terpisah secara fisik. WHO merekomendasikan untuk menjaga jarak
+                  setidaknya 1 meter dari orang lain. Jarak ini merupakan ukuran umum tentang seberapa jauh semua
+                  orang harus saling menjaga jarak walaupun mereka baik-baik saja tanpa diketahui terpajan COVID-19
+                  atau tidak.</p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-6"
+                class="collapsed">Apakah anak-anak atau remaja dapat terinfeksi COVID-19? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Penelitian menunjukkan bahwa anak-anak dan remaja memiliki risiko terinfeksi dan menularkan ke orang
+                  lain yang sama seperti kelompok usia lainnya.
+                </p>
+                <p>Sampai saat ini, bukti menunjukkan bahwa anak-anak dan remaja lebih kecil kemungkinannya terkena
+                  penyakit yang serius, meskipun penyakit yang serius masih dapat terjadi pada kelompok usia ini.</p>
+                <p>Anak-anak dan orang dewasa harus mengikuti panduan yang sama tentang karantina dan isolasi mandiri
+                  jika ada kemungkinan bahwa mereka telah terpajan atau mulai menunjukkan gejala. Sangat penting bagi
+                  anak-anak untuk menghindari kontak dengan orang tua dan orang lain yang berisiko memiliki penyakit
+                  serius.</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>CegahCovid adalah website yang membahas tentang Virus Covid-19. Silahkan hubungi kami jika ada yang ingin
+            disampaikan dibawah ini.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-globe"></i>
+                <h4>Official Site:</h4>
+                <p>www.pedulilindungi.id</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>zahrina.nurpuriani.si.21@cic.ac.id</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+62 881 8212 718</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Tugas 14 Web</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
+          Made with ❤️ ZN20210121016
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
